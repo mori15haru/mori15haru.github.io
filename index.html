@@ -5,28 +5,38 @@
     <title>mori15haru.github.io by mori15haru</title>
   </head>
   <body>
+    <body link='grey'>
+    <body vlink='grey'>
     <header>
-      <h1>mori15haru</h1>
-      <p>Learning #ruby #git #vim</p>
-      <p><a href="https://github.com/mori15haru">View My GitHub Profile</a></p>
+      <h1>森15春</h1>
+      <p>Learning <font color='grey'>#ruby #git #vim</font></p>
+      <p><a href="https://github.com/mori15haru">GitHub</a></p>
     </header>
+    <hr>
     <h2>Repositories</h2>
     <div class='repos'></div>
     <script>
       $.get(
         'https://api.github.com/users/mori15haru/repos',
         function(repos) {
+          $('.repos').append('<dl>');
           for (i = 0; i < repos.length; i++) {
-            $('.repos').append('<h3>'+repos[i].name+'</h3>');
-            $('.repos').append('<p>'+repos[i].description+'</p>');
+            $('.repos').append('<dt><font color="grey">'+repos[i].name+'</font></dt>');
+            $('.repos').append('<dd>'+repos[i].description+'</dd>');
           }
+          $('.repos').append('</dl>');
         }
       );
     </script>
-    <h2>blog</h2>
-    <p>Learning Ruby</p>
+    <hr>
+    <h2>その他</h2>
+    <dl>
+      <dt><font color='grey'>gists</font></dt>
+      <dd>Learning Ruby</dd>
+    </dl>
+    <hr>
     <footer>
-      <p>Hosted on GitHub Pages</p>
+      <p><small><font color='grey'>Hosted on GitHub Pages<font color='grey'></samll></p>
     </footer>
   </body>
 </html>
