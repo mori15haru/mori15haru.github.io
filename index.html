@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>mori15haru.github.io by mori15haru</title>
   </head>
   <body>
@@ -9,17 +10,20 @@
       <p>Learning #ruby #git #vim</p>
       <p><a href="https://github.com/mori15haru">View My GitHub Profile</a></p>
     </header>
-    <h3>mori15haru.github.io</h3>
-    <p>This blog</p>
-    <h3>gosu-sim</h3>
-    <p>Mini projects using gosu library: 3D cube, game-of-life, gravity, path-finding, tetris</p>
-    <h3>bite-size-codes</h3>
-    <p>Some short codes</p>
-    <h3>doughnuts</h3>
-    <p>Learning computational topology</p>
-    <h3>peanut-butter-cups</h3>
-    <p>Graphics-related mini projects: raytracer</p>
-    <h3>blog</h3>
+    <h2>Repositories</h2>
+    <div class='repos'></div>
+    <script>
+      $.get(
+        'https://api.github.com/users/mori15haru/repos',
+        function(repos) {
+          for (i = 0; i < repos.length; i++) {
+            $('.repos').append('<h3>'+repos[i].name+'</h3>');
+            $('.repos').append('<p>'+repos[i].description+'</p>');
+          }
+        }
+      );
+    </script>
+    <h2>blog</h2>
     <p>Learning Ruby</p>
     <footer>
       <p>Hosted on GitHub Pages</p>
