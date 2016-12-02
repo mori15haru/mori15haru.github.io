@@ -2,14 +2,20 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+      dt, .light, small, a:link, a:visited {
+        color:grey
+      }
+      a:hover {
+        color:#B19CD9
+      }
+    </style>
     <title>mori15haru.github.io by mori15haru</title>
   </head>
   <body>
-    <body link='grey'>
-    <body vlink='grey'>
     <header>
-      <h1>森15春</h1>
-      <p>Learning <font color='grey'>#ruby #git #vim</font></p>
+      <h1>mori15haru</h1>
+      <p>Learning <span class='light'>#ruby #git #vim</span></p>
       <p><a href="https://github.com/mori15haru">GitHub</a></p>
     </header>
     <hr>
@@ -21,7 +27,7 @@
         function(repos) {
           $('.repos').append('<dl>');
           for (i = 0; i < repos.length; i++) {
-            $('.repos').append('<dt><font color="grey">'+repos[i].name+'</font></dt>');
+            $('.repos').append('<dt>'+repos[i].name+'</dt>');
             $('.repos').append('<dd>'+repos[i].description+'</dd>');
           }
           $('.repos').append('</dl>');
@@ -31,12 +37,12 @@
     <hr>
     <h2>その他</h2>
     <dl>
-      <dt><font color='grey'>gists</font></dt>
+      <dt><a href="https://gist.github.com/mori15haru">gists</a></dt>
       <dd>Learning Ruby</dd>
     </dl>
     <hr>
     <footer>
-      <p><small><font color='grey'>Hosted on GitHub Pages<font color='grey'></samll></p>
+      <p><small>Hosted on GitHub Pages</p>
     </footer>
   </body>
 </html>
