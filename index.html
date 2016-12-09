@@ -3,11 +3,18 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <style>
-      dt, .light, small, a:link, a:visited {
-        color:grey
+      a:link, a:visited {
+        color: grey;
+        text-decoration: none
       }
       a:hover {
-        color:#B19CD9
+        color: #B19CD9
+      }
+      body {
+        font-family: arial
+      }
+      dd, .light, small {
+        color: #C0C0C0
       }
     </style>
     <title>mori15haru.github.io by mori15haru</title>
@@ -27,8 +34,8 @@
         function(repos) {
           $('.repos').append('<dl>');
           for (i = 0; i < repos.length; i++) {
-            $('.repos').append('<dt>'+repos[i].name+'</dt>');
-            $('.repos').append('<dd>'+repos[i].description+'</dd>');
+            $('.repos').append('<dt><a href="'+repos[i].html_url+'">'+repos[i].name+'</a></dt>');
+            $('.repos').append('<dd>'+repos[i].description+'</dd><br>');
           }
           $('.repos').append('</dl>');
         }
